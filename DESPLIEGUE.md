@@ -160,10 +160,19 @@ El reporte no está en GitHub: debe transferirse por SSH/SFTP. Copiarlo solo a
 Desde PowerShell, sustituya `USUARIO_SSH` por el usuario real:
 
 ```powershell
-scp .\reporte_cosecha.html USUARIO_SSH@claude.agrocalera.app:/opt/claude/reporte_cosecha.html
+Set-Location 'C:\Users\AlonsoMendoza\Documents\Proyectos\presentacionClaude'
+scp .\reporte_cosecha.html .\EVALUACIONES_20261020225816.xlsx USUARIO_SSH@claude.agrocalera.app:~/
 ```
 
-Luego genere y active una nueva versión siguiendo el paso 8. La opción
+En su sesión SSH, copie los materiales recibidos al repositorio:
+
+```bash
+sudo install -m 644 ~/reporte_cosecha.html /opt/claude/reporte_cosecha.html
+sudo install -m 644 ~/EVALUACIONES_20261020225816.xlsx /opt/claude/EVALUACIONES_20261020225816.xlsx
+```
+
+Luego genere y active una nueva versión siguiendo el paso 8. Esto publica también
+el icono de pestaña `isotipo.webp`. La opción
 `--require-private` cancela la publicación si falta el Excel o el reporte.
 Si no tiene permisos para escribir en `/opt/claude`, transfiera primero a su
 carpeta personal y muévalo con `sudo` a `/opt/claude/`.

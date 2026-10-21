@@ -5,7 +5,7 @@ import shutil
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = (
-    "AgroCalera_logo.png", "AgroCalera_verde.png", "fondo.jpg",
+    "AgroCalera_logo.png", "AgroCalera_verde.png", "fondo.jpg", "isotipo.webp",
     "claude_logo.png", "claude_logo.webp", "logo_claude.png",
     "logo_excel.webp", "logo_html.webp", "chat_tradicional.png", "proyecto.png",
 )

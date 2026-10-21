@@ -1,0 +1,3 @@
+El archivo EVALUACIONES_20261020225816.xlsx está vinculado desde la carpeta principal del proyecto.
+Su ruta se configura en scripts/content/sanidad.js.
+La aplicación permite descargarlo para adjuntarlo manualmente en Claude. No lo envía a servicios externos.

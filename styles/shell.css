@@ -1,0 +1,41 @@
+/* Encabezado y navegación persistentes. El contenido conserva fondo blanco. */
+:root{--header-height:80px;--sidebar-width:240px}
+html{scroll-padding-top:calc(var(--header-height) + 20px)}
+.topbar{position:sticky;top:0;z-index:50;height:var(--header-height);background:var(--green);color:#fff;border-bottom:1px solid #ffffff24}
+.topbar .btn{color:#fff;border-color:#ffffff30;background:transparent}
+.topbar .btn:hover{background:#ffffff15;border-color:#ffffff70}
+.workshop{padding-top:var(--header-height)}
+.workshop .topbar{position:fixed;inset:0 0 auto;width:100%;height:var(--header-height)}
+.workshop .work-layout{display:block;padding-left:var(--sidebar-width);min-height:calc(100svh - var(--header-height))}
+.workshop .sidebar{position:fixed;top:var(--header-height);left:0;bottom:0;width:var(--sidebar-width);z-index:40;overflow-y:auto;overscroll-behavior:contain;background:var(--green);color:#fff;border-right:1px solid #ffffff24;scrollbar-width:thin;scrollbar-color:#8cbd91 var(--green)}
+.workshop .sidebar .module-label{color:#d5f0ce}
+.workshop .sidebar .challenge-nav{color:#fff}
+.workshop .sidebar .challenge-nav small,.workshop .sidebar .nav-number,.workshop .sidebar-progress small{color:#d0e4d3}
+.workshop .sidebar .challenge-nav.selected{background:#ffffff12;border-color:#ffffff55;box-shadow:inset 3px 0 var(--lime)}
+.workshop .sidebar .challenge-nav.selected .nav-number{color:var(--lime)}
+.workshop .sidebar .challenge-nav:hover{background:#ffffff19;border-color:#ffffff55}
+.workshop .sidebar-progress{border-color:#ffffff30}
+.workshop .sidebar-progress progress,.workshop .sidebar-progress progress::-webkit-progress-bar{background:#ffffff29}
+.workshop .sidebar-progress progress::-webkit-progress-value{background:var(--lime)}
+.workshop .sidebar-progress progress::-moz-progress-bar{background:var(--lime)}
+.workshop .sidebar-bottom .btn{color:#fff}
+.workshop .sidebar-bottom .btn:hover{background:#ffffff15}
+.workshop .mode-switch{background:transparent;border-color:#ffffff35}
+.workshop .mode-switch button{color:#e1efe2}
+.workshop .mode-switch button:hover{background:#ffffff13}
+.workshop .mode-switch button[aria-pressed=true]{background:#fff;color:var(--green);box-shadow:none}
+.topbar :focus-visible,.sidebar :focus-visible{outline-color:var(--lime)}
+.header-index{display:none}
+@media(max-width:1100px){:root{--sidebar-width:210px}}
+@media(max-width:800px){
+ :root{--header-height:72px;--sidebar-width:0px}
+ .workshop .topbar{min-height:0;flex-wrap:nowrap;gap:12px;padding:12px 5%}
+ .workshop .topbar .workshop-name{display:none}
+ .workshop .topbar .brand img{width:112px;height:42px}
+ .workshop .top-actions{gap:5px;min-width:0}
+ .workshop .mode-switch{margin-right:0;padding:3px}
+ .workshop .mode-switch button{padding:8px;font-size:0;gap:0}
+ .workshop .header-index{display:inline-flex;font-size:0;gap:0;width:33px;min-height:36px;padding:7px}
+ .workshop .sidebar{display:none}
+ .workshop .workspace{margin:0 auto}
+}

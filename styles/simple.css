@@ -1,0 +1,44 @@
+/* Taller práctico: una acción por pantalla, sin mensajes promocionales. */
+:root{--ivory:#fff}
+body,.workshop,.work-layout,.workspace,.sidebar{background:#fff}
+.case-label{font-size:12px;font-weight:600;color:var(--muted);margin:0 0 12px}
+.workshop .challenge-nav.selected{background:#fff;border-color:#a6baa5;box-shadow:inset 3px 0 var(--green)}
+.workshop .challenge-nav:hover{background:#fff;border-color:#a6baa5}
+.workshop .comparison section,.workshop .comparison section:nth-child(2),.workshop .prompt-block>header,.workshop .answer-explanation,.workshop .reveal-card,.workshop .accordions details,.workshop .prompt-text:not([readonly]){background:#fff}
+.workshop .options button.chosen{background:#fff;border-color:var(--green);box-shadow:inset 3px 0 var(--green)}
+.workshop .options button>span{background:#fff;border:1px solid var(--line)}
+.workshop .mode-switch{background:#fff;border:1px solid var(--line)}
+.simple-home{min-height:640px;background:linear-gradient(90deg,#0a2414db,#0a24148a),url('../fondo.jpg') center/cover}
+.simple-home .landing-header{border:0;padding:30px 0;justify-content:space-between}
+.simple-home .landing-header .brand{padding:0;background:none;border-radius:0}
+.simple-home .brand img{width:190px;height:65px}
+.simple-home .hero{gap:8%;justify-content:space-between;padding:40px 0 65px}
+.simple-home .hero-copy{flex:1}
+.simple-home .hero h1{font-size:clamp(64px,6vw,108px);font-weight:550;line-height:1.06;letter-spacing:-.055em;margin:22px 0}
+.simple-home .hero-copy>p{font-size:21px;margin:0;color:#eef4e9}
+.simple-home .hero-actions{margin-top:32px}
+.simple-home .hero-actions .btn{font-size:16px;min-width:170px}
+.home-challenges{width:min(460px,43%);background:#fcfdf8;border:1px solid #ffffff70;border-radius:14px;padding:8px 26px 15px;color:var(--dark)}
+.home-index-heading{display:flex;justify-content:space-between;padding:17px 0;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line)}
+.home-challenges>button{display:flex;width:100%;align-items:center;gap:18px;background:transparent;text-align:left;border:0;border-bottom:1px solid var(--line);padding:24px 0}
+.home-challenges>button:last-child{border:0}
+.home-challenges>button:hover b{color:var(--green);text-decoration:underline;text-underline-offset:4px}
+.home-number{font:500 14px var(--heading);color:#7c8c72}
+.home-challenges b{display:block;font-size:21px;font-family:var(--heading);font-weight:500;letter-spacing:-.04em}
+.home-challenges small{display:block;font-size:12px;color:var(--muted);margin-top:5px}
+.home-duration{font-size:11px;color:var(--muted);margin-left:auto;white-space:nowrap}
+.home-challenges>button>svg{width:17px;color:var(--green)}
+.simple-home .landing-bottom{padding:21px 0;letter-spacing:0}
+.claude-title-logo{display:block;width:4.8em;max-width:100%;height:auto;margin-bottom:.18em}
+.copyright{font-size:12px;line-height:1.6;letter-spacing:0;font-weight:600}
+.home-areas-toggle{border:0;background:transparent;color:#eef4e9;display:flex;align-items:center;gap:10px;font-size:12px;padding:12px}
+.simple-area-list{display:grid;gap:10px}.simple-area-list>div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);gap:20px}.simple-area-list small{color:var(--muted)}
+.sidebar{padding-top:28px}.sidebar .module-label{margin-bottom:24px}.sidebar-bottom:before{display:none}.sidebar-progress{margin-top:24px}.challenge-nav{padding:17px 12px}.challenge-nav b{font-size:15px}.challenge-nav small{font-size:11px}.sidebar-bottom{padding-top:25px}
+.challenge-heading{padding:18px 0}.challenge-heading .eyebrow{display:none}.challenge-heading h2{font-size:26px;margin:0}.feature-icon{display:none}.workspace-top{margin-bottom:0}.workspace{padding-top:22px}.step-tabs{margin-top:5px}
+.step-content{padding:30px 0;min-height:390px}.step-content>.eyebrow{display:none}.step-content>h1{font-size:clamp(28px,2.4vw,40px);margin:0 0 23px}.lead{font-size:18px;margin-bottom:20px;max-width:800px}
+.prompt-block{margin:0;background:white}.prompt-preview{font-size:18px;line-height:1.75;color:#3f5142;padding:25px 28px;margin:0;max-width:1000px}.prompt-block>header{padding:14px 20px;background:#f0f3ea}.prompt-block>header>span{font-size:11px;letter-spacing:.06em}.prompt-block .copy-button{font-size:14px;padding:12px 20px}.prompt-block footer{justify-content:flex-start;padding:8px 12px}.prompt-block footer .btn{font-size:12px}.prompt-text.expanded{height:420px;font-size:17px;line-height:1.7;padding:24px 28px}body[data-mode=guide] .prompt-text.expanded{height:520px}
+body[data-mode=presentation] .facilitator-note{display:none}.comparison{margin:0 0 24px}.comparison section{padding:24px}.comparison section>svg{display:none}.comparison h3{font-size:22px;margin-bottom:12px}.comparison p{font-size:18px}.instruction-grid{margin:0 0 24px;gap:12px 28px}.instruction-grid li{font-size:18px;padding:14px 0;align-items:center}.instruction-grid li span{padding:0}.instruction-grid li:before{height:36px;min-width:36px;font-size:13px}
+.question{margin-top:24px}.question>.eyebrow{display:none}.question h3{font-size:23px}.options button{font-size:16px;padding:17px}.resource-card{margin:20px 0 28px}.resource-card b{font-size:14px}.resource-card span{font-size:12px}.resource-card .btn{font-size:12px}.reveal-card{padding:28px;margin:0}.reveal-card>svg{display:none}.reveal-card h3{font-size:27px}.learning-row{display:none}.step-footer{padding-top:18px}.step-footer .btn{font-size:14px}.workshop-tools>span{display:none}.workshop-tools .btn{font-size:12px}.step-footer .index-button{display:inline-flex}.topbar{height:80px}.work-layout{min-height:calc(100svh - 80px);grid-template-columns:240px minmax(0,1fr)}.workshop-name{border:0;padding:0}.workshop-name>span{display:none}.workspace{max-width:1460px}
+@media(min-width:1600px){.simple-home{padding-left:8%;padding-right:8%}.home-challenges{width:480px}.home-challenges>button{padding:27px 0}.step-content{min-height:450px}.workspace{padding-left:65px;padding-right:65px}.prompt-preview{font-size:22px;padding:30px}.instruction-grid li{font-size:21px}.options button{font-size:18px}.challenge-nav{padding:20px 12px}.step-content>.lead{font-size:21px}.comparison p{font-size:21px}}
+@media(max-width:1100px){.simple-home .hero{gap:5%}.home-challenges{padding:8px 20px 12px;width:46%}.home-challenges b{font-size:19px}.home-duration{display:none}.work-layout{grid-template-columns:210px minmax(0,1fr)}.workspace{padding-left:28px;padding-right:28px}.sidebar .module-label{font-size:9px;padding-left:5px}.challenge-nav{gap:10px;padding-left:8px}.challenge-nav b{font-size:14px}}
+@media(max-width:800px){.simple-home{height:auto;max-height:none;min-height:100svh}.simple-home .brand img{width:155px;height:52px}.simple-home .landing-header{padding:20px 0}.simple-home .hero{display:block;padding:24px 0 30px}.simple-home .hero h1{font-size:64px;margin:18px 0}.simple-home .hero-copy>p{font-size:17px}.simple-home .hero-actions{margin-top:24px}.home-challenges{width:100%;margin-top:36px;padding:6px 20px}.home-challenges>button{padding:18px 0}.home-challenges b{font-size:19px}.home-duration{display:block}.home-challenges small{font-size:11px}.simple-home .landing-bottom{padding:15px 0}.work-layout{display:block}.topbar{height:auto}.workspace{padding:20px 6%}.challenge-heading h2{font-size:23px}.step-content{min-height:300px;padding:28px 0}.step-content>h1{font-size:29px}.prompt-preview{font-size:16px;padding:20px}.prompt-block>header{padding:12px}.prompt-block .copy-button{font-size:12px;padding:10px 12px}.prompt-block footer .btn{font-size:11px}.prompt-text.expanded{padding:20px;font-size:15px;height:390px}.instruction-grid li{font-size:17px}.comparison p{font-size:17px}.options button{font-size:15px}.step-footer .btn{font-size:12px}.step-footer .index-button{font-size:0;gap:0}.resource-card b{font-size:12px}.reveal-card h3{font-size:23px}.sidebar{display:none}}

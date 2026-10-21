@@ -1,0 +1,23 @@
+# Material operativo: copiar por un canal privado al VPS.
+*.xlsx
+*.xls
+*.csv
+reporte_cosecha.html
+reporte-sanidad.html
+docs/capturas/
+resources/sanidad/*
+!resources/sanidad/LEEME.txt
+
+# Configuración y archivos generados.
+.env
+.env.*
+!.env.example
+dist/
+backups/
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

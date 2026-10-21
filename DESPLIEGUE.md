@@ -44,7 +44,7 @@ En el VPS:
 ```bash
 cd /opt/claude
 release_dir="/var/www/claude/releases/$(date -u +%Y%m%dT%H%M%S)-$(git rev-parse --short HEAD)"
-python3 scripts/build_site.py --output "$release_dir"
+python3 scripts/build_site.py --require-private --output "$release_dir"
 chmod -R u=rwX,go=rX "$release_dir"
 ln -s "$release_dir" /var/www/claude/current
 ```
@@ -109,7 +109,7 @@ cd /opt/claude
 readlink -f /var/www/claude/current
 git pull --ff-only origin main
 release_dir="/var/www/claude/releases/$(date -u +%Y%m%dT%H%M%S)-$(git rev-parse --short HEAD)"
-python3 scripts/build_site.py --output "$release_dir"
+python3 scripts/build_site.py --require-private --output "$release_dir"
 chmod -R u=rwX,go=rX "$release_dir"
 ```
 
@@ -146,9 +146,24 @@ readlink -f /var/www/claude/current
 | Problema | Revisar |
 | --- | --- |
 | 403 tras iniciar sesión | Permisos de lectura y acceso a las carpetas. |
-| Excel/reporte 404 | Material presente antes de generar esa versión. |
+| Excel/reporte 404 | Material presente en el repositorio local y en la versión publicada; ver reparación abajo. |
 | Otro sitio o listado de carpetas | DNS, server_name y raíz pública. |
 | Certificado no emitido | DNS, AAAA y acceso público por puerto 80. |
 | Cambios no visibles | Enlace current, recarga y caché del panel/CDN. |
 
 Referencias: [Nginx: archivos estáticos](https://nginx.org/en/docs/beginners_guide.html#static), [Nginx: autenticación](https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html), [Certbot: Nginx](https://eff-certbot.readthedocs.io/en/stable/using.html#nginx).
+
+### Reparar el 404 de Cosecha
+
+El reporte no está en GitHub: debe transferirse por SSH/SFTP. Copiarlo solo a
+`/opt/claude/` después de construir no actualiza la versión ya publicada.
+Desde PowerShell, sustituya `USUARIO_SSH` por el usuario real:
+
+```powershell
+scp .\reporte_cosecha.html USUARIO_SSH@claude.agrocalera.app:/opt/claude/reporte_cosecha.html
+```
+
+Luego genere y active una nueva versión siguiendo el paso 8. La opción
+`--require-private` cancela la publicación si falta el Excel o el reporte.
+Si no tiene permisos para escribir en `/opt/claude`, transfiera primero a su
+carpeta personal y muévalo con `sudo` a `/opt/claude/`.

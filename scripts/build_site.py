@@ -12,7 +12,7 @@ ASSETS = (
 PRIVATE = ("EVALUACIONES_20261020225816.xlsx", "reporte_cosecha.html")
 
 
-def build(output):
+def build(output, require_private=False):
     # Solo un destino inexistente: nunca borrar archivos del usuario ni del código.
     if output.exists():
         raise SystemExit(f"El destino ya existe: {output}. Use otra carpeta vacía/inexistente.")
@@ -21,6 +21,13 @@ def build(output):
     for source in required:
         if not source.exists():
             raise SystemExit(f"Falta un recurso obligatorio: {source.relative_to(ROOT)}")
+    if require_private:
+        missing = [name for name in PRIVATE if not (ROOT / name).is_file()]
+        if missing:
+            raise SystemExit(
+                "Publicación cancelada. Copie primero estos materiales privados "
+                "a la raíz del proyecto: " + ", ".join(missing)
+            )
     output.mkdir(parents=True)
 
     def copy(source):
@@ -52,5 +59,7 @@ def build(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", default="dist", help="Carpeta de salida nueva")
+    parser.add_argument("--require-private", action="store_true",
+                        help="Cancelar si falta el Excel o el reporte de cosecha (recomendado en producción)")
     args = parser.parse_args()
-    build(Path(args.output).resolve())
+    build(Path(args.output).resolve(), require_private=args.require_private)
